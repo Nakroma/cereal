@@ -58,4 +58,16 @@ class CerealTest extends TestCase
         $this->assertTrue(preg_match('/\d/', $key1) === 0);
         $this->assertTrue(preg_match('[a-zA-Z]', $key2) === 0);
     }
+
+    /**
+     * Tests if the key is completly lower/upper case
+     */
+    public function testUppercase()
+    {
+        $key1 = Cereal::generate(['uppercase' => false]);
+        $key2 = Cereal::generate(['uppercase' => true]);
+
+        $this->assertEquals(strtolower($key1), $key1);
+        $this->assertEquals(strtoupper($key2), $key2);
+    }
 }
