@@ -74,5 +74,5 @@ class Cereal
     }
 }
 
-//$key = Cereal::generate(['delimiter' => '', 'length' => 128]);
+//$key = Cereal::generate();
 //echo $key . " --- " .strlen($key);

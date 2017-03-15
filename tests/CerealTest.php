@@ -32,4 +32,18 @@ class CerealTest extends TestCase
 
         $this->assertEquals(strlen($key), $length);
     }
+
+    /**
+     * Tests if the delimiters are correct
+     */
+    public function testDelimiters()
+    {
+        $length = rand();
+        $delimiterSpacing = rand(0, $length-1);
+        $delimiter = '-';
+        $key = Cereal::generate(['length' => $length, 'delimiter' => $delimiter, 'delimiterSpacing' => $delimiterSpacing]);
+
+        $delimiterCount = substr_count($key, $delimiter);
+        $this->assertEquals($delimiterCount, ceil(($length/$delimiterSpacing)-1));
+    }
 }
