@@ -46,4 +46,16 @@ class CerealTest extends TestCase
         $delimiterCount = substr_count($key, $delimiter);
         $this->assertEquals($delimiterCount, ceil(($length/$delimiterSpacing)-1));
     }
+
+    /**
+     * Tests if the key correctly shows only numbers/chars
+     */
+    public function testSpecificSigns()
+    {
+        $key1 = Cereal::generate(['numbers' => false]);
+        $key2 = Cereal::generate(['chars' => false]);
+
+        $this->assertTrue(preg_match('/\d/', $key1) === 0);
+        $this->assertTrue(preg_match('[a-zA-Z]', $key2) === 0);
+    }
 }
