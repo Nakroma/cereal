@@ -73,6 +73,3 @@ class Cereal
         return md5(uniqid(session_id().rand(), true));
     }
 }
-
-//$key = Cereal::generate();
-//echo $key . " --- " .strlen($key);

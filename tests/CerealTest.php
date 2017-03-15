@@ -60,7 +60,7 @@ class CerealTest extends TestCase
     }
 
     /**
-     * Tests if the key is completly lower/upper case
+     * Tests if the key is completely lower/upper case
      */
     public function testUppercase()
     {
